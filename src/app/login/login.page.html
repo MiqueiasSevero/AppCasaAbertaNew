@@ -1,0 +1,33 @@
+
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            
+            <img src="./assets/img/logobusca.png" alt="">
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+    
+
+
+<ion-content>
+
+          
+              
+            
+  <form [formGroup]="formularioLogin" ><!--formularioLogin.value passa somento o valor-->
+          <ion-item>
+            <ion-label position="stacked">E-mail</ion-label>
+            <ion-input  type="email" inputmode="email" formControlName="email" required="true"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label position="stacked">Senha</ion-label>
+            <ion-input type="password" inputmode="password" formControlName="password" required="true"></ion-input>
+          </ion-item>
+
+
+          <ion-button color="primary"  expand="block"  (click)="login(formularioLogin.value)" [disabled]="formularioLogin.invalid" type="submit">Entrar</ion-button>
+          
+        </form> 
+        <ion-button   expand="block"  (click)="cadastrar()" type="button" fill="clear">Cadastrar</ion-button>      
+</ion-content>
