@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Storage} from '@ionic/storage';
-import { UsuarioService } from '../services/usuario/usuario.service';
+//import { UsuarioService } from '../services/usuario/usuario.service';
+import {NavController} from '@ionic/angular';
+//import {} from '';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +16,7 @@ export class HomePage implements OnInit {
 
 
 
-  constructor(private storege:Storage) { 
+  constructor(private storege:Storage, private navCtrl:NavController ) { 
 
   }
 
@@ -25,8 +27,19 @@ export class HomePage implements OnInit {
           this.nomeUser = dados.nome;
 
       });
+    
 
 
+  }
+  sair(){
+    
+      this.storege.clear();
+      this.navCtrl.navigateRoot("/");
+
+
+  } 
+  eventos(){
+      this.navCtrl.navigateForward("/eventos");
   }
 
 }

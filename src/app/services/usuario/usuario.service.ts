@@ -15,4 +15,5 @@ export class UsuarioService {
   cadastrar(data: any){
     return  this.http.post("http://localhost/CasaAberta_php/objetos/obj_usuario_insert.php",data);
   }
+  select
 }
